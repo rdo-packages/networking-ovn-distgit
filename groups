@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-ce3b1b546670b2759602a0fb1ec1bac64d8e6ce1	networking-ovn-distgit-ptl
+# UUID          Group Name
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
+173995abda205575340e2c58fa4408a48b968eab       	networking-ovn-distgit-core
+ce3b1b546670b2759602a0fb1ec1bac64d8e6ce1        	networking-ovn-distgit-ptl
+global:Registered-Users		Registered Users
