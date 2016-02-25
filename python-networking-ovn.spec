@@ -18,45 +18,59 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-debtcollector
 BuildRequires:  python-mock
+
+# This is required to generate the networking-ovn.ini configuration file
+BuildRequires:  python-neutron
+
 BuildRequires:  python-oslo-config
+BuildRequires:  python-oslo-log
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
-BuildRequires:  python-webtest
 
+
+# python-openvswitch is not included in openstack-neutron-common.
+# Its needed by networking-ovn.
 Requires:       openstack-neutron-common
-Requires:       python-babel
-Requires:       python-pbr
+Requires:       python-openvswitch
 
 
 %description
-This package contains %{drv_vendor} networking driver for OpenStack Neutron.
+OVN provides virtual networking for Open vSwitch and is a component of the
+Open vSwitch project.
+
+This package contains %{drv_vendor} networking driver which provides
+integration between OpenStack Neutron and OVN.
 
 
 %prep
-%setup -q -n %{pkgname}-%{upstream_version}
+%autosetup -n %{pkgname}-%{upstream_version} -S git
+
+# Let's handle dependencies ourselves
+rm -f requirements.txt test-requirements.txt
+
+# Kill egg-info in order to generate new SOURCES.txt
+rm -rf {srcname}.egg-info
 
 
 %build
-rm requirements.txt test-requirements.txt
+export SKIP_PIP_INSTALL=1
 %{__python2} setup.py build
 %{__python2} setup.py build_sphinx
 rm %{docpath}/.buildinfo
 
 # Generate config file
-oslo-config-generator --namespace networking_ovn --output-file networking-ovn.ini
-
-#%check
-#%{__python2} setup.py testr
+PYTHONPATH=. oslo-config-generator --namespace networking_ovn --output-file networking-ovn.ini
 
 
 %install
-export PBR_VERSION=%{version}
-export SKIP_PIP_INSTALL=1
-%{__python2} setup.py install --skip-build --root %{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+
+# Remove unused files
+rm -rf %{buildroot}%{python2_sitelib}/bin
+rm -rf %{buildroot}%{python2_sitelib}/doc
+rm -rf %{buildroot}%{python2_sitelib}/tools
+
 
 # Move config file to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/neutron/plugins/networking-ovn
@@ -68,6 +82,6 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 %license LICENSE
 %doc %{docpath}
 %{python2_sitelib}/%{srcname}
-%{python2_sitelib}/%{srcname}-%{version}-py%{python2_version}.egg-info
+%{python2_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/*.ini
