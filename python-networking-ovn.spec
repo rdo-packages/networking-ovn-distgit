@@ -26,6 +26,7 @@ BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
+BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 
 
