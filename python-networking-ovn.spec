@@ -1,4 +1,4 @@
-%global milestone .0rc1
+%global milestone .0rc2
 %global drv_vendor OVN
 %global pkgname networking-ovn
 %global srcname networking_ovn
@@ -8,7 +8,7 @@
 
 Name:           python-%{pkgname}
 Version:        1.0.0
-Release:        0.2%{?milestone}%{?dist}
+Release:        0.3%{?milestone}%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -16,7 +16,7 @@ URL:            https://pypi.python.org/pypi/%{pkgname}
 Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_version}.tar.gz
 
 #
-# patches_base=1.0.0.0rc1
+# patches_base=1.0.0.0rc2
 #
 
 BuildArch:      noarch
@@ -94,6 +94,9 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 
 %changelog
+* Thu Sep 29 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.3.0rc1
+- Update to 1.0.0.0rc2
+
 * Wed Sep 21 2016 Alfredo Moralejo <amoralej@redhat.com> 1.0.0-0.2.0rc1
 - Update to 1.0.0.0rc1
 
