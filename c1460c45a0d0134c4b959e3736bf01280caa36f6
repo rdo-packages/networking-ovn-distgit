@@ -16,6 +16,24 @@
       "revId": "c1460c45a0d0134c4b959e3736bf01280caa36f6",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_1d8ff324",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 234
+      },
+      "writtenOn": "2016-10-20T17:55:51Z",
+      "side": 1,
+      "message": "That\u0027s the commit which used retrying package. the first link switches from retrying to tenacity.\n\nI shared it because both these commits are related. But may be not so related from rpm perspective. I can remove it and re spin another one tomorrow",
+      "parentUuid": "5adbc538_9dcdc389",
+      "revId": "c1460c45a0d0134c4b959e3736bf01280caa36f6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
