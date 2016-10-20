@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_9dcdc389",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-10-20T16:57:29Z",
+      "side": 1,
+      "message": "How is that 2nd commit related?",
+      "revId": "c1460c45a0d0134c4b959e3736bf01280caa36f6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
