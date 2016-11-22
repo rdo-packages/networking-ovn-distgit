@@ -103,3 +103,4 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 * Wed Sep 14 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.1.0b3
 - Update to 1.0.0.0b3
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-ovn/commit/?id=19c8a86583b7936a9f0534b9508b31f75abc9534
