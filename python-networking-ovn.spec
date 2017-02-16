@@ -40,9 +40,9 @@ BuildRequires:  python-sphinx
 Requires:       openstack-neutron-common
 Requires:       python-babel
 Requires:       python-netaddr
-Requires:       python-neutron-lib >= 0.4.0
+Requires:       python-neutron-lib >= 1.1.0
 Requires:       python-oslo-config >= 2:3.14.0
-Requires:       python-openvswitch >= 2.5.0
+Requires:       python-openvswitch >= 2.6.1
 Requires:       python-pbr
 Requires:       python-retrying
 Requires:       python-six
