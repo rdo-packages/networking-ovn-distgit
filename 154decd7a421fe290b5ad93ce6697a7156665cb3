@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac4a560_e9fb5d45",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 368
+      },
+      "writtenOn": "2017-03-01T19:53:44Z",
+      "side": 1,
+      "message": "typo, ovn",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "154decd7a421fe290b5ad93ce6697a7156665cb3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
