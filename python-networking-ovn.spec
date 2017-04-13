@@ -6,7 +6,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pkgname}
-Version:        2.0.0
+Version:        2.0.1
 Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
@@ -96,6 +96,9 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 
 %changelog
+* Thu Apr 13 2017 Alfredo Moralejo <amoralej@redhat.com> 2.0.1-1
+- Update to 2.0.1
+
 * Wed Feb 22 2017 Alfredo Moralejo <amoralej@redhat.com> 2.0.0-1
 - Update to 2.0.0
 
