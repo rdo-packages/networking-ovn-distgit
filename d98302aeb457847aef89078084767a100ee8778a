@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_8120dd9c",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 234
+      },
+      "writtenOn": "2017-05-15T18:03:47Z",
+      "side": 0,
+      "message": "@Ihar - So, you are suggesting to keep this code to generate the config file for ovn ? \n\nAnd probably rename to ml2_conf_ovn.ini ?",
+      "revId": "d98302aeb457847aef89078084767a100ee8778a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
