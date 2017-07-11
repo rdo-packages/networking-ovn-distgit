@@ -29,7 +29,7 @@ BuildRequires:  python-neutron
 
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
@@ -70,7 +70,7 @@ rm -rf {srcname}.egg-info
 export SKIP_PIP_INSTALL=1
 %{__python2} setup.py build
 %{__python2} setup.py build_sphinx
-rm %{docpath}/.buildinfo
+rm -rf %{docpath}/.{doctrees,buildinfo}
 
 # Generate config file
 PYTHONPATH=. oslo-config-generator --namespace networking_ovn --output-file networking-ovn.ini
@@ -109,4 +109,3 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 * Wed Sep 14 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.1.0b3
 - Update to 1.0.0.0b3
-
