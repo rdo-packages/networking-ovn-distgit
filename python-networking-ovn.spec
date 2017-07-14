@@ -97,6 +97,7 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 %{python2_sitelib}/%{srcname}
 %{python2_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
+%{_bindir}/networking-ovn-metadata-agent
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/*.ini
 
 
@@ -109,3 +110,4 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 * Wed Sep 14 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.1.0b3
 - Update to 1.0.0.0b3
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-ovn/commit/?id=ad1fea3e7ba837d521c924b285294d7cf2efcefb
