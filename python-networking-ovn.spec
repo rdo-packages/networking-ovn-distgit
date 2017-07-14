@@ -97,6 +97,7 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 %{python2_sitelib}/%{srcname}
 %{python2_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
+%{_bindir}/networking-ovn-metadata-agent
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/*.ini
 
 
