@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a8d04654",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-07-14T14:17:45Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "038901d1e312969729bd8b55655732290a7808fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
