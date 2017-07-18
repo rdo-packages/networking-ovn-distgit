@@ -14,7 +14,7 @@ Summary:        %{drv_vendor} OpenStack Neutron driver
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pkgname}
 Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_version}.tar.gz
-
+Source1:        networking-ovn-metadata-agent.service
 #
 # patches_base=1.0.0.0rc2
 #
@@ -44,7 +44,7 @@ Requires:       python-babel
 Requires:       python-netaddr
 Requires:       python-neutron-lib >= 1.9.0
 Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-openvswitch >= 2.7.0
+Requires:       python-openvswitch >= 2.8.0
 Requires:       python-pbr
 Requires:       python-six
 Requires:       python-tenacity
@@ -58,6 +58,18 @@ Open vSwitch project.
 This package contains %{drv_vendor} networking driver which provides
 integration between OpenStack Neutron and OVN.
 
+
+%package metadata-agent
+Summary:        networking-ovn metadata agent
+Requires:       python-%{pkgname} = %{version}-%{release}
+Requires:       openvswitch >= 2.8
+
+%description metadata-agent
+OVN provides virtual networking for Open vSwitch and is a component of the
+Open vSwitch project.
+
+This package contains the agent that implements the metadata proxy so that VM's
+can retrieve metadata from OpenStack Nova.
 
 %prep
 %autosetup -n %{pkgname}-%{upstream_version} -S git
@@ -77,6 +89,7 @@ rm -rf %{docpath}/.{doctrees,buildinfo}
 
 # Generate config file
 PYTHONPATH=. oslo-config-generator --namespace networking_ovn --output-file networking-ovn.ini
+PYTHONPATH=. oslo-config-generator --namespace networking_ovn.metadata.agent --output-file networking-ovn-metadata-agent.ini
 
 
 %install
@@ -91,8 +104,25 @@ rm -rf %{buildroot}%{python2_sitelib}/tools
 # Move config file to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/neutron/plugins/networking-ovn
 mv networking-ovn.ini %{buildroot}%{_sysconfdir}/neutron/plugins/networking-ovn
+mv networking-ovn-metadata-agent.ini %{buildroot}%{_sysconfdir}/neutron/plugins/networking-ovn
 chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
+# Create configuration directories for all services that can be populated by users with custom *.conf files
+mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
+
+# Install systemd units
+install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-agent.service
+
+%post metadata-agent
+%systemd_post networking-ovn-metadata-agent.service
+
+
+%preun metadata-agent
+%systemd_preun networking-ovn-metadata-agent.service
+
+
+%postun metadata-agent
+%systemd_postun_with_restart networking-ovn-metadata-agent.service
 
 %files
 %license LICENSE
@@ -100,9 +130,15 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 %{python2_sitelib}/%{srcname}
 %{python2_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
-%{_bindir}/networking-ovn-metadata-agent
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/*.ini
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn.ini
+%dir %{_sysconfdir}/neutron/plugins/networking-ovn
 
+%files metadata-agent
+%license LICENSE
+%{_bindir}/networking-ovn-metadata-agent
+%{_unitdir}/networking-ovn-metadata-agent.service
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn-metadata-agent.ini
+%dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
 
 %changelog
 * Thu Sep 29 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.3.0rc1
