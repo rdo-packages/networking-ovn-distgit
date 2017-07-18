@@ -20,6 +20,7 @@ Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_
 #
 
 BuildArch:      noarch
+BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-debtcollector
 BuildRequires:  python-mock
