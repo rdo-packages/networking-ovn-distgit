@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_84cc6a37",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-14T17:50:07Z",
+      "side": 1,
+      "message": "neutron-lib \u003e\u003d 1.9.0",
+      "revId": "4e65f4346058733905d6d3911e983f03c13ee0a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_64605e36",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-14T17:50:07Z",
+      "side": 1,
+      "message": "This should be 2.7.0",
+      "range": {
+        "startLine": 45,
+        "startChar": 38,
+        "endLine": 45,
+        "endChar": 43
+      },
+      "revId": "4e65f4346058733905d6d3911e983f03c13ee0a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c45f5271",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-14T17:50:07Z",
+      "side": 1,
+      "message": "retrying can be removed, it was replaced by tenacity.",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "4e65f4346058733905d6d3911e983f03c13ee0a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c4d672c5",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-14T17:50:07Z",
+      "side": 1,
+      "message": "Missing:\n\novsdbapp \u003e\u003d 0.4.0\npyOpenSSL \u003e\u003d 0.14",
+      "revId": "4e65f4346058733905d6d3911e983f03c13ee0a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
