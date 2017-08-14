@@ -32,7 +32,6 @@ BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 
 
@@ -41,7 +40,7 @@ BuildRequires:  python-sphinx
 Requires:       openstack-neutron-common
 Requires:       python-babel
 Requires:       python-netaddr
-Requires:       python-neutron-lib >= 1.1.0
+Requires:       python-neutron-lib >= 0.4.0
 Requires:       python-oslo-config >= 2:3.14.0
 Requires:       python-openvswitch >= 2.6.1
 Requires:       python-pbr
