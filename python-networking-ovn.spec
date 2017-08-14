@@ -32,7 +32,6 @@ BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 
 
@@ -41,13 +40,14 @@ BuildRequires:  python-sphinx
 Requires:       openstack-neutron-common
 Requires:       python-babel
 Requires:       python-netaddr
-Requires:       python-neutron-lib >= 1.1.0
-Requires:       python-oslo-config >= 2:3.14.0
-Requires:       python-openvswitch >= 2.6.1
+Requires:       python-neutron-lib >= 1.9.0
+Requires:       python-oslo-config >= 2:4.0.0
+Requires:       python-openvswitch >= 2.7.0
 Requires:       python-pbr
-Requires:       python-retrying
 Requires:       python-six
 Requires:       python-tenacity
+Requires:       python-ovsdbapp >= 0.4.0
+Requires:       pyOpenSSL >= 0.14
 
 %description
 OVN provides virtual networking for Open vSwitch and is a component of the
