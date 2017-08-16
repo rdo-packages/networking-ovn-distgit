@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_753c8a94",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-16T14:28:24Z",
+      "side": 1,
+      "message": "it should be 4.0.0, i didn\u0027t see it in first review",
+      "range": {
+        "startLine": 44,
+        "startChar": 40,
+        "endLine": 44,
+        "endChar": 46
+      },
+      "revId": "f9de13f4a4344756cf6c90e7437c8fb6e5a58826",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
