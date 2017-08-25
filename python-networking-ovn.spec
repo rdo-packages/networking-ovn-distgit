@@ -7,8 +7,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pkgname}
-Version:        1.0.0
-Release:        0.3%{?milestone}%{?dist}
+Version:        3.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -16,7 +16,7 @@ URL:            https://pypi.python.org/pypi/%{pkgname}
 Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_version}.tar.gz
 
 #
-# patches_base=1.0.0.0rc2
+# patches_base=3.0.0.0rc2
 #
 
 BuildArch:      noarch
@@ -103,6 +103,9 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 
 %changelog
+* Fri Aug 25 2017 Alfredo Moralejo <amoralej@redhat.com> 3.0.0-0.1.0rc2
+- Update to 3.0.0.0rc2
+
 * Thu Sep 29 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.0-0.3.0rc1
 - Update to 1.0.0.0rc2
 
