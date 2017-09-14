@@ -31,6 +31,7 @@ BuildRequires:  python-neutron
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
 BuildRequires:  python-openstackdocstheme
+BuildRequires:  python-ovsdbapp
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
 
