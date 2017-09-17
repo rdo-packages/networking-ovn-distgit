@@ -24,6 +24,7 @@ BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-debtcollector
 BuildRequires:  python-mock
+BuildRequires:  openstack-macros
 
 # This is required to generate the networking-ovn.ini configuration file
 BuildRequires:  python-neutron
@@ -62,7 +63,7 @@ integration between OpenStack Neutron and OVN.
 %autosetup -n %{pkgname}-%{upstream_version} -S git
 
 # Let's handle dependencies ourselves
-rm -f requirements.txt test-requirements.txt
+%py_req_cleanup
 
 # Kill egg-info in order to generate new SOURCES.txt
 rm -rf {srcname}.egg-info
