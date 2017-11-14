@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_433c3a94",
+        "filename": "networking-ovn-metadata-agent.service",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2017-11-14T16:57:08Z",
+      "side": 1,
+      "message": "no, we don\u0027t depend on neutron.conf anymore.\nhttps://review.openstack.org/#/c/494115/",
+      "parentUuid": "da86d52c_83cf12b0",
+      "revId": "d8908353d0607acc8e590aab80ff0d242518a313",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_63ca1ea3",
         "filename": "python-networking-ovn.spec",
         "patchSetId": 11
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_63413e0b",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2017-11-14T16:57:08Z",
+      "side": 1,
+      "message": "ops! right :)",
+      "parentUuid": "da86d52c_63ca1ea3",
+      "range": {
+        "startLine": 66,
+        "startChar": 31,
+        "endLine": 66,
+        "endChar": 34
+      },
+      "revId": "d8908353d0607acc8e590aab80ff0d242518a313",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_03e4023a",
         "filename": "python-networking-ovn.spec",
         "patchSetId": 11
@@ -53,6 +95,30 @@
       "writtenOn": "2017-11-14T16:02:01Z",
       "side": 1,
       "message": "This directory is used in main package and metadata agent depends on python-%{pkgname} so the directory should be there, not in the metadata agent one.",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 50
+      },
+      "revId": "d8908353d0607acc8e590aab80ff0d242518a313",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_83463222",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2017-11-14T16:57:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_03e4023a",
       "range": {
         "startLine": 140,
         "startChar": 0,
