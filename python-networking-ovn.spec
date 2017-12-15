@@ -42,14 +42,14 @@ BuildRequires:  python-sphinx
 Requires:       openstack-neutron-common
 Requires:       python-babel
 Requires:       python-netaddr
-Requires:       python-neutron-lib >= 1.9.0
-Requires:       python-oslo-config >= 2:4.0.0
+Requires:       python-neutron-lib >= 1.11.0
+Requires:       python-oslo-config >= 2:5.1.0
 Requires:       python-openvswitch >= 2.8.0
 Requires:       python-pbr
 Requires:       python-six
 Requires:       python-tenacity
-Requires:       python-ovsdbapp >= 0.4.0
-Requires:       pyOpenSSL >= 0.14
+Requires:       python-ovsdbapp >= 0.8.0
+Requires:       pyOpenSSL >= 16.2.0
 
 %description
 OVN provides virtual networking for Open vSwitch and is a component of the
