@@ -19,34 +19,35 @@ Source1:        networking-ovn-metadata-agent.service
 BuildArch:      noarch
 BuildRequires:  git
 BuildRequires:  python2-devel
-BuildRequires:  python-debtcollector
-BuildRequires:  python-mock
+BuildRequires:  python2-debtcollector
+BuildRequires:  python2-mock
 BuildRequires:  openstack-macros
 
 # This is required to generate the networking-ovn.ini configuration file
 BuildRequires:  python-neutron
 
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-log
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-ovsdbapp
-BuildRequires:  python-pbr
-BuildRequires:  python-sphinx
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-ovsdbapp
+BuildRequires:  python2-pbr
+BuildRequires:  python2-sphinx
 
 
 # python-openvswitch is not included in openstack-neutron-common.
 # Its needed by networking-ovn.
 Requires:       openstack-neutron-common
-Requires:       python-babel
-Requires:       python-netaddr
-Requires:       python-neutron-lib >= 1.11.0
-Requires:       python-oslo-config >= 2:5.1.0
-Requires:       python-openvswitch >= 2.8.0
-Requires:       python-pbr
-Requires:       python-six
-Requires:       python-tenacity
-Requires:       python-ovsdbapp >= 0.8.0
-Requires:       pyOpenSSL >= 16.2.0
+Requires:       python2-futurist >= 1.2.0
+Requires:       python2-babel
+Requires:       python2-netaddr
+Requires:       python2-neutron-lib >= 1.13.0
+Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-openvswitch >= 2.8.0
+Requires:       python2-pbr
+Requires:       python2-six
+Requires:       python2-tenacity
+Requires:       python2-ovsdbapp >= 0.8.0
+Requires:       python2-pyOpenSSL >= 16.2.0
 
 %description
 OVN provides virtual networking for Open vSwitch and is a component of the
