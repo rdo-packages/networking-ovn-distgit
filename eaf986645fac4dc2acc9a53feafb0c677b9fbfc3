@@ -22,6 +22,30 @@
       "revId": "eaf986645fac4dc2acc9a53feafb0c677b9fbfc3",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_ead0cccb",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-14T14:05:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_ca8750d6",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "eaf986645fac4dc2acc9a53feafb0c677b9fbfc3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
