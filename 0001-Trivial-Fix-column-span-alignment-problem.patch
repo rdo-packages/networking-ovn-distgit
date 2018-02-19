@@ -1,0 +1,45 @@
+From 45c776994766680c7d19f91453927c3b08d0fbce Mon Sep 17 00:00:00 2001
+From: Lucas Alvares Gomes <lucasagomes@gmail.com>
+Date: Wed, 14 Feb 2018 15:36:58 +0000
+Subject: [PATCH] Trivial: Fix column span alignment problem
+
+This was causing the RDO rpms to fail at build time with the following
+error:
+
+/builddir/build/BUILD/networking-ovn-4.0.0.0rc2.dev15/doc/source/contributor/design/database_consistency.rst:256:
+(ERROR/3) Malformed table.
+
+Change-Id: I19253648dd023721ac3012f27dd5f24df2c506f7
+(cherry picked from commit 99856fa921e89745594e87aceaa8816195be1d29)
+---
+ doc/source/contributor/design/database_consistency.rst | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/doc/source/contributor/design/database_consistency.rst b/doc/source/contributor/design/database_consistency.rst
+index 15baa22..a1f0483 100644
+--- a/doc/source/contributor/design/database_consistency.rst
++++ b/doc/source/contributor/design/database_consistency.rst
+@@ -249,9 +249,9 @@ that would serve as a cache for the revision numbers in **OVNDB**.
+ 
+ The new table schema could look this:
+ 
+-================  ========  ===========
++================  ========  =================================================
+ Column name       Type      Description
+-================  ========  ===========
++================  ========  =================================================
+ standard_attr_id  Integer   Primary key. The reference ID from the
+                             standardattributes table in Neutron for
+                             that resource. ONDELETE SET NULL.
+@@ -262,7 +262,7 @@ acquired_at       DateTime  The time that the entry was create. For
+                             troubleshooting purposes
+ updated_at        DateTime  The time that the entry was updated. For
+                             troubleshooting purposes
+-================  ========  ===========
++================  ========  =================================================
+ 
+ For the different actions: Create, update and delete; this table will be
+ used as:
+-- 
+2.13.6
+
