@@ -1,3 +1,4 @@
+%global milestone .0rc1
 %global drv_vendor OVN
 %global pkgname networking-ovn
 %global srcname networking_ovn
@@ -6,13 +7,17 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pkgname}
-Version:        XXX
-Release:        XXX
+Version:        4.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pkgname}
 Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_version}.tar.gz
+#
+# patches_base=4.0.0.0rc1
+#
+
 Source1:        networking-ovn-metadata-agent.service
 #
 
@@ -141,3 +146,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
 
 %changelog
+* Mon Feb 19 2018 RDO <dev@lists.rdoproject.org> 4.0.0-0.1.0rc1
+- Update to 4.0.0.0rc1
+
