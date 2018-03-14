@@ -16,9 +16,6 @@ Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_
 #
 
 Source1:        networking-ovn-metadata-agent.service
-#
-# (TODO) amoralej - remove following patch https://review.openstack.org/#/c/546053/ is broken
-Patch001:       0001-Trivial-Fix-column-span-alignment-problem.patch
 
 BuildArch:      noarch
 BuildRequires:  git
@@ -150,4 +147,3 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 
 * Mon Feb 19 2018 RDO <dev@lists.rdoproject.org> 4.0.0-0.1.0rc2
 - Update to 4.0.0.0rc2
-
