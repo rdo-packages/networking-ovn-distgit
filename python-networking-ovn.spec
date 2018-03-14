@@ -151,3 +151,4 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 * Mon Feb 19 2018 RDO <dev@lists.rdoproject.org> 4.0.0-0.1.0rc2
 - Update to 4.0.0.0rc2
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-ovn/commit/?id=4163bfb56137aa010a9fe8563e60e3d6ffb41f04
