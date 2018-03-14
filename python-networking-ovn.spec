@@ -17,8 +17,6 @@ Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_
 
 Source1:        networking-ovn-metadata-agent.service
 #
-# (TODO) amoralej - remove following patch https://review.openstack.org/#/c/546053/ is broken
-Patch001:       0001-Trivial-Fix-column-span-alignment-problem.patch
 
 BuildArch:      noarch
 BuildRequires:  git
