@@ -6,7 +6,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pkgname}
-Version:        4.0.0
+Version:        4.0.1
 Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
@@ -143,6 +143,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
 
 %changelog
+* Wed May 02 2018 RDO <dev@lists.rdoproject.org> 4.0.1-1
+- Update to 4.0.1
+
 * Wed Feb 28 2018 RDO <dev@lists.rdoproject.org> 4.0.0-1
 - Update to 4.0.0
 
