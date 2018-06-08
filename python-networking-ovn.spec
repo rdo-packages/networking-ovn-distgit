@@ -71,6 +71,14 @@ Open vSwitch project.
 This package contains the agent that implements the metadata proxy so that VM's
 can retrieve metadata from OpenStack Nova.
 
+%package migration-tool
+Summary:        networking-ovn ML2/OVS to OVN migration tool
+Requires:       python-%{pkgname} = %{version}-%{release}
+
+%description migration-tool
+This package provides the necessary tools to update an existing ML2/OVS
+OpenStack to OVN based backend.
+
 %prep
 %autosetup -n %{pkgname}-%{upstream_version} -S git
 
@@ -139,5 +147,11 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{_unitdir}/networking-ovn-metadata-agent.service
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn-metadata-agent.ini
 %dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
+
+%files migration-tool
+%license LICENSE
+%{_bindir}/networking-ovn-migration-mtu
+%{_bindir}/ovn_migration.sh
+%{_datadir}/ansible/networking-ovn-migration/playbooks/
 
 %changelog
