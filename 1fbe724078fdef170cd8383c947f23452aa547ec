@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_96f167d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-14T22:36:33Z",
+      "side": 1,
+      "message": "Nicer is to resolve the link back to the Gerrit review:\nhttps://review.openstack.org/573652\n\nIt shorter and has review comments for more context.",
+      "revId": "1fbe724078fdef170cd8383c947f23452aa547ec",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_b6e46b0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-14T22:36:33Z",
+      "side": 1,
+      "message": "please remove this line, trunk.rdo repos get GCed eventually",
+      "revId": "1fbe724078fdef170cd8383c947f23452aa547ec",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
