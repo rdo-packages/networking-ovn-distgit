@@ -130,6 +130,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{python2_sitelib}/%{srcname}
 %{python2_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
+%{_bindir}/networking-ovn-migration-mtu
 %dir %{_sysconfdir}/neutron/plugins/networking-ovn
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn.ini
 
