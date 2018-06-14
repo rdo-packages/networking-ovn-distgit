@@ -141,3 +141,4 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-ovn/commit/?id=a4cc95be08039b581d2559b5384642c19ba06239
