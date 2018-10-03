@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %global drv_vendor OVN
 %global pkgname networking-ovn
 %global srcname networking_ovn
@@ -17,40 +28,49 @@ Source1:        networking-ovn-metadata-agent.service
 #
 
 BuildArch:      noarch
+
+%description
+OVN provides virtual networking for Open vSwitch and is a component of the
+Open vSwitch project.
+
+%package -n     python%{pyver}-%{pkgname}
+Summary:        %{drv_vendor} OpenStack Neutron driver
+%{?python_provide:%python_provide python%{pyver}-%{pkgname}}
+
 BuildRequires:  git
-BuildRequires:  python2-devel
-BuildRequires:  python2-debtcollector
-BuildRequires:  python2-mock
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-debtcollector
+BuildRequires:  python%{pyver}-mock
 BuildRequires:  openstack-macros
 
 # This is required to generate the networking-ovn.ini configuration file
-BuildRequires:  python-neutron
+BuildRequires:  python%{pyver}-neutron
 
-BuildRequires:  python2-oslo-config
-BuildRequires:  python2-oslo-log
-BuildRequires:  python2-openstackdocstheme
-BuildRequires:  python2-ovsdbapp
-BuildRequires:  python2-pbr
-BuildRequires:  python2-sphinx
+BuildRequires:  python%{pyver}-oslo-config
+BuildRequires:  python%{pyver}-oslo-log
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-ovsdbapp
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-sphinx
 
 
 # python-openvswitch is not included in openstack-neutron-common.
 # Its needed by networking-ovn.
 Requires:       openstack-neutron-common
-Requires:       python2-babel
-Requires:       python2-futurist >= 1.2.0
-Requires:       python2-netaddr
-Requires:       python2-neutron-lib >= 1.18.0
-Requires:       python2-oslo-config >= 2:5.2.0
-Requires:       python2-openvswitch >= 2.8.0
-Requires:       python2-pbr
-Requires:       python2-six
-Requires:       python2-tenacity
-Requires:       python2-ovsdbapp >= 0.10.0
-Requires:       python2-pyOpenSSL >= 17.1.0
-Requires:       python2-sqlalchemy >= 1.2.0
+Requires:       python%{pyver}-babel
+Requires:       python%{pyver}-futurist >= 1.2.0
+Requires:       python%{pyver}-netaddr
+Requires:       python%{pyver}-neutron-lib >= 1.18.0
+Requires:       python%{pyver}-oslo-config >= 2:5.2.0
+Requires:       python%{pyver}-openvswitch >= 2.8.0
+Requires:       python%{pyver}-pbr
+Requires:       python%{pyver}-six
+Requires:       python%{pyver}-tenacity
+Requires:       python%{pyver}-ovsdbapp >= 0.10.0
+Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
+Requires:       python%{pyver}-sqlalchemy >= 1.2.0
 
-%description
+%description -n     python%{pyver}-%{pkgname}
 OVN provides virtual networking for Open vSwitch and is a component of the
 Open vSwitch project.
 
@@ -61,7 +81,7 @@ integration between OpenStack Neutron and OVN.
 %package metadata-agent
 Summary:        networking-ovn metadata agent
 BuildRequires:  systemd
-Requires:       python-%{pkgname} = %{version}-%{release}
+Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 Requires:       openvswitch >= 2.8.0
 %{?systemd_requires}
 
@@ -74,7 +94,7 @@ can retrieve metadata from OpenStack Nova.
 
 %package migration-tool
 Summary:        networking-ovn ML2/OVS to OVN migration tool
-Requires:       python-%{pkgname} = %{version}-%{release}
+Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 
 %description migration-tool
 This package provides the necessary tools to update an existing ML2/OVS
@@ -92,22 +112,22 @@ rm -rf {srcname}.egg-info
 
 %build
 export SKIP_PIP_INSTALL=1
-%{__python2} setup.py build
-%{__python2} setup.py build_sphinx
+%{pyver_build}
+%{pyver_bin} setup.py build_sphinx
 rm -rf %{docpath}/.{doctrees,buildinfo}
 
 # Generate config file
-PYTHONPATH=. oslo-config-generator --namespace networking_ovn --output-file networking-ovn.ini
-PYTHONPATH=. oslo-config-generator --namespace networking_ovn.metadata.agent --output-file networking-ovn-metadata-agent.ini
+PYTHONPATH=. oslo-config-generator-%{pyver} --namespace networking_ovn --output-file networking-ovn.ini
+PYTHONPATH=. oslo-config-generator-%{pyver} --namespace networking_ovn.metadata.agent --output-file networking-ovn-metadata-agent.ini
 
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+%{pyver_install}
 
 # Remove unused files
-rm -rf %{buildroot}%{python2_sitelib}/bin
-rm -rf %{buildroot}%{python2_sitelib}/doc
-rm -rf %{buildroot}%{python2_sitelib}/tools
+rm -rf %{buildroot}%{pyver_sitelib}/bin
+rm -rf %{buildroot}%{pyver_sitelib}/doc
+rm -rf %{buildroot}%{pyver_sitelib}/tools
 
 
 # Move config file to proper location
@@ -133,11 +153,11 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %postun metadata-agent
 %systemd_postun_with_restart networking-ovn-metadata-agent.service
 
-%files
+%files -n     python%{pyver}-%{pkgname}
 %license LICENSE
 %doc %{docpath}
-%{python2_sitelib}/%{srcname}
-%{python2_sitelib}/%{srcname}-*.egg-info
+%{pyver_sitelib}/%{srcname}
+%{pyver_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
 %dir %{_sysconfdir}/neutron/plugins/networking-ovn
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn.ini
