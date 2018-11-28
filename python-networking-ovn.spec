@@ -83,7 +83,7 @@ Summary:        networking-ovn metadata agent
 BuildRequires:  systemd
 Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 Requires:       openvswitch >= 2.8.0
-%{?systemd_requires}
+%{?systemd_ordering}
 
 %description metadata-agent
 OVN provides virtual networking for Open vSwitch and is a component of the
