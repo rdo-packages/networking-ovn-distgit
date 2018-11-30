@@ -52,6 +52,24 @@
       "revId": "ecda10597049dad2d9f9ea0c91bae6833b9a1b1f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_27d8e1ee",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 141
+      },
+      "writtenOn": "2018-11-30T13:13:58Z",
+      "side": 1,
+      "message": "Why not invert the condition and use the usual pattern?\n\n%if 0%{?fedora} || 0%{?rhel} \u003e 7\n\n\n\nOtherwise this will never be tested with F28-stabilized (which should support it)",
+      "parentUuid": "9abe1de1_50226eba",
+      "revId": "ecda10597049dad2d9f9ea0c91bae6833b9a1b1f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
