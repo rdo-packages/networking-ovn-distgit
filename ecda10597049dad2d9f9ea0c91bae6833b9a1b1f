@@ -178,6 +178,42 @@
       "revId": "ecda10597049dad2d9f9ea0c91bae6833b9a1b1f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_a74e3194",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 411
+      },
+      "writtenOn": "2018-11-30T15:50:03Z",
+      "side": 1,
+      "message": "\\o/ thanks for reviews folks!",
+      "parentUuid": "9abe1de1_677139e0",
+      "revId": "ecda10597049dad2d9f9ea0c91bae6833b9a1b1f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_27ffc135",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 411
+      },
+      "writtenOn": "2018-11-30T15:50:03Z",
+      "side": 1,
+      "message": "...looking onto https://bugzilla.redhat.com/attachment.cgi?id\u003d1510097\u0026action\u003ddiff, I would suggest to use \n\n%if 0%{?fedora} || 0%{?rhel} \u0026\u0026 0%{?rhel} \u003c 8\n\nor\n\n%if 0%{?fedora} \u0026\u0026 0%{?fedora} \u003c 28 || 0%{?rhel} \u0026\u0026 0%{?rhel} \u003c 8\n\nperhaps...",
+      "parentUuid": "9abe1de1_a7f2b16d",
+      "revId": "ecda10597049dad2d9f9ea0c91bae6833b9a1b1f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
