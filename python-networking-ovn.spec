@@ -78,8 +78,10 @@ This package contains %{drv_vendor} networking driver which provides
 integration between OpenStack Neutron and OVN.
 
 
-%package metadata-agent
+%package -n     python%{pyver}-%{pkgname}-metadata-agent
 Summary:        networking-ovn metadata agent
+%{?python_provide:%python_provide python%{pyver}-%{pkgname}-metadata-agent}
+
 BuildRequires:  systemd
 Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 Requires:       openvswitch >= 2.8.0
@@ -89,18 +91,20 @@ Requires:       openvswitch >= 2.8.0
 %{?systemd_ordering} # does not exist on EL7
 %endif
 
-%description metadata-agent
+%description -n     python%{pyver}-%{pkgname}-metadata-agent
 OVN provides virtual networking for Open vSwitch and is a component of the
 Open vSwitch project.
 
 This package contains the agent that implements the metadata proxy so that VM's
 can retrieve metadata from OpenStack Nova.
 
-%package migration-tool
+%package -n     python%{pyver}-%{pkgname}-migration-tool
 Summary:        networking-ovn ML2/OVS to OVN migration tool
+%{?python_provide:%python_provide python%{pyver}-%{pkgname}-migration-tool}
+
 Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 
-%description migration-tool
+%description -n     python%{pyver}-%{pkgname}-migration-tool
 This package provides the necessary tools to update an existing ML2/OVS
 OpenStack to OVN based backend.
 
@@ -146,18 +150,18 @@ mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agen
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-agent.service
 
-%post metadata-agent
+%post -n python%{pyver}-%{pkgname}-metadata-agent
 %systemd_post networking-ovn-metadata-agent.service
 
 
-%preun metadata-agent
+%preun -n python%{pyver}-%{pkgname}-metadata-agent
 %systemd_preun networking-ovn-metadata-agent.service
 
 
-%postun metadata-agent
+%postun -n python%{pyver}-%{pkgname}-metadata-agent
 %systemd_postun_with_restart networking-ovn-metadata-agent.service
 
-%files -n     python%{pyver}-%{pkgname}
+%files -n python%{pyver}-%{pkgname}
 %license LICENSE
 %doc %{docpath}
 %{pyver_sitelib}/%{srcname}
@@ -166,14 +170,14 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %dir %{_sysconfdir}/neutron/plugins/networking-ovn
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn.ini
 
-%files metadata-agent
+%files -n python%{pyver}-%{pkgname}-metadata-agent
 %license LICENSE
 %{_bindir}/networking-ovn-metadata-agent
 %{_unitdir}/networking-ovn-metadata-agent.service
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/networking-ovn/networking-ovn-metadata-agent.ini
 %dir %{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agent
 
-%files migration-tool
+%files -n python%{pyver}-%{pkgname}-migration-tool
 %license LICENSE
 %{_bindir}/networking-ovn-migration-mtu
 %{_bindir}/ovn_migration.sh
