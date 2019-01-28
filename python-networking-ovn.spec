@@ -15,6 +15,7 @@
 %global docpath doc/build/html
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%global with_doc 1
 
 Name:           python-%{pkgname}
 Version:        XXX
@@ -48,11 +49,13 @@ BuildRequires:  python%{pyver}-neutron
 
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-oslo-log
-BuildRequires:  python%{pyver}-openstackdocstheme
 BuildRequires:  python%{pyver}-ovsdbapp
 BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-sphinx
 
+%if 0%{?with_doc}
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-sphinx
+%endif
 
 # python-openvswitch is not included in openstack-neutron-common.
 # Its needed by networking-ovn.
@@ -121,8 +124,11 @@ rm -rf {srcname}.egg-info
 %build
 export SKIP_PIP_INSTALL=1
 %{pyver_build}
+
+%if 0%{?with_doc}
 %{pyver_bin} setup.py build_sphinx
 rm -rf %{docpath}/.{doctrees,buildinfo}
+%endif
 
 # Generate config file
 PYTHONPATH=. oslo-config-generator-%{pyver} --namespace networking_ovn --output-file networking-ovn.ini
@@ -163,7 +169,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 
 %files -n python%{pyver}-%{pkgname}
 %license LICENSE
+%if 0%{?with_doc}
 %doc %{docpath}
+%endif
 %{pyver_sitelib}/%{srcname}
 %{pyver_sitelib}/%{srcname}-*.egg-info
 %{_bindir}/neutron-ovn-db-sync-util
