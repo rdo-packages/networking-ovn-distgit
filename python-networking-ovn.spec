@@ -88,6 +88,7 @@ Summary:        networking-ovn metadata agent
 BuildRequires:  systemd
 Requires:       python%{pyver}-%{pkgname} = %{version}-%{release}
 Requires:       openvswitch >= 2.8.0
+Requires:       haproxy >= 1.5.0
 %if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
 %else
