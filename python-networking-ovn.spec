@@ -193,3 +193,4 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{_datadir}/ansible/networking-ovn-migration/playbooks/
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-ovn/commit/?id=98ae4b80fd8e42bda389ff0b7592cbfd2a7527be
