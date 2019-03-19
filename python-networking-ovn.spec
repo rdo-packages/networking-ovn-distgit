@@ -127,7 +127,7 @@ export SKIP_PIP_INSTALL=1
 %{pyver_build}
 
 %if 0%{?with_doc}
-%{pyver_bin} setup.py build_sphinx
+sphinx-build-%{pyver} -b html doc/source %{docpath}
 rm -rf %{docpath}/.{doctrees,buildinfo}
 %endif
 
