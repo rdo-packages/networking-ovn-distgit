@@ -59,16 +59,18 @@ BuildRequires:  python%{pyver}-sphinx
 
 # python-openvswitch is not included in openstack-neutron-common.
 # Its needed by networking-ovn.
+Requires:       openstack-neutron >= 1:13.0.0
 Requires:       openstack-neutron-common
-Requires:       python%{pyver}-babel
+Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-futurist >= 1.2.0
-Requires:       python%{pyver}-netaddr
-Requires:       python%{pyver}-neutron-lib >= 1.18.0
+Requires:       python%{pyver}-netaddr >= 0.7.18
+Requires:       python%{pyver}-neutron-lib >= 1.25.0
 Requires:       python%{pyver}-oslo-config >= 2:5.2.0
+Requires:       python%{pyver}-octavia-lib >= 1.1.1
 Requires:       python%{pyver}-openvswitch >= 2.8.0
-Requires:       python%{pyver}-pbr
-Requires:       python%{pyver}-six
-Requires:       python%{pyver}-tenacity
+Requires:       python%{pyver}-pbr >= 2.0.0
+Requires:       python%{pyver}-six >= 1.10.0
+Requires:       python%{pyver}-tenacity >= 4.4.0
 Requires:       python%{pyver}-ovsdbapp >= 0.10.0
 Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
 Requires:       python%{pyver}-sqlalchemy >= 1.2.0
