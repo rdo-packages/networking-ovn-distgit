@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0758146_64035c30",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-20T10:00:46Z",
+      "side": 1,
+      "message": "Let\u0027s use openstack-neutron-common instead of adding a new dep on openstack-neutron.",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 45
+      },
+      "revId": "4e49b2af69743f84227d59413b58bf6cbf0f76c2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
