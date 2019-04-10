@@ -1,4 +1,3 @@
-%global milestone .0rc1
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
 %global pyver %{python3_pkgversion}
@@ -20,14 +19,12 @@
 
 Name:           python-%{pkgname}
 Version:        6.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pkgname}
 Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_version}.tar.gz
-#
-# patches_base=6.0.0.0rc1
 #
 
 Source1:        networking-ovn-metadata-agent.service
@@ -199,6 +196,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{_datadir}/ansible/networking-ovn-migration/playbooks/
 
 %changelog
+* Wed Apr 10 2019 RDO <dev@lists.rdoproject.org> 6.0.0-1
+- Update to 6.0.0
+
 * Fri Mar 22 2019 RDO <dev@lists.rdoproject.org> 6.0.0-0.1.0rc1
 - Update to 6.0.0.0rc1
 
