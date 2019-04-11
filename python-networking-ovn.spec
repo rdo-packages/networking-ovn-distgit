@@ -16,7 +16,6 @@ Source0:        https://tarballs.openstack.org/%{pkgname}/%{pkgname}-%{upstream_
 #
 
 Source1:        networking-ovn-metadata-agent.service
-#
 
 BuildArch:      noarch
 BuildRequires:  git
