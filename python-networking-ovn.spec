@@ -6,7 +6,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pkgname}
-Version:        3.0.1
+Version:        3.0.2
 Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
@@ -100,6 +100,9 @@ chmod 640 %{buildroot}%{_sysconfdir}/neutron/plugins/*/*.ini
 
 
 %changelog
+* Fri May 10 2019 RDO <dev@lists.rdoproject.org> 3.0.2-1
+- Update to 3.0.2
+
 * Mon Jan 22 2018 RDO <dev@lists.rdoproject.org> 3.0.1-1
 - Update to 3.0.1
 
