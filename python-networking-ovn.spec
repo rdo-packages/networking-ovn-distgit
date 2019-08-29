@@ -15,7 +15,8 @@
 %global docpath doc/build/html
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%global with_doc 1
+# Disable doc build until sphinxcontrib-svg2pdfconverter package is available in the requirements repo
+%global with_doc 0
 
 Name:           python-%{pkgname}
 Version:        XXX
