@@ -1,0 +1,9 @@
+Code-Review+2: Javier Peña <jpena@redhat.com>
+Code-Review+2: Chandan Kumar <chkumar246@gmail.com>
+Workflow+1: Chandan Kumar <chkumar246@gmail.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Thu, 29 Aug 2019 08:35:25 +0000
+Reviewed-on: https://review.rdoproject.org/r/21974
+Project: openstack/networking-ovn-distgit
+Branch: refs/heads/rpm-master
