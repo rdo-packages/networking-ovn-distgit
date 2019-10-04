@@ -64,16 +64,18 @@ Requires:       openstack-neutron-common >= 1:13.0.0
 Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-futurist >= 1.2.0
 Requires:       python%{pyver}-netaddr >= 0.7.18
-Requires:       python%{pyver}-neutron-lib >= 1.25.0
+Requires:       python%{pyver}-neutron-lib >= 1.28.0
 Requires:       python%{pyver}-oslo-config >= 2:5.2.0
-Requires:       python%{pyver}-octavia-lib >= 1.1.1
+Requires:       python%{pyver}-octavia-lib >= 1.3.1
 Requires:       python%{pyver}-openvswitch >= 2.8.0
 Requires:       python%{pyver}-pbr >= 2.0.0
 Requires:       python%{pyver}-six >= 1.10.0
 Requires:       python%{pyver}-tenacity >= 4.4.0
-Requires:       python%{pyver}-ovsdbapp >= 0.10.0
+Requires:       python%{pyver}-ovsdbapp >= 0.17.0
 Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
+Requires:       python%{pyver}-requests >= 2.14.2
 Requires:       python%{pyver}-sqlalchemy >= 1.2.0
+Requires:       python%{pyver}-tooz >= 1.58.0
 
 %description -n     python%{pyver}-%{pkgname}
 OVN provides virtual networking for Open vSwitch and is a component of the
