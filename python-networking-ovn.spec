@@ -15,8 +15,7 @@
 %global docpath doc/build/html
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-# Disable doc build until sphinxcontrib-svg2pdfconverter package is available in the requirements repo
-%global with_doc 0
+%global with_doc 1
 
 Name:           python-%{pkgname}
 Version:        XXX
@@ -56,6 +55,7 @@ BuildRequires:  python%{pyver}-pbr
 %if 0%{?with_doc}
 BuildRequires:  python%{pyver}-openstackdocstheme
 BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 %endif
 
 # python-openvswitch is not included in openstack-neutron-common.
