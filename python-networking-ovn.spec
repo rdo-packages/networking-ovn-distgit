@@ -1,4 +1,4 @@
-%global milestone .0rc1
+%global milestone .0rc2
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
 %global pyver %{python3_pkgversion}
@@ -20,7 +20,7 @@
 
 Name:           python-%{pkgname}
 Version:        7.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        0.2%{?milestone}%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -59,7 +59,7 @@ BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 %endif
 
-# patches_base=7.0.0.0rc1
+# patches_base=7.0.0.0rc2
 # python-openvswitch is not included in openstack-neutron-common.
 # Its needed by networking-ovn.
 Requires:       openstack-neutron-common >= 1:13.0.0
@@ -199,6 +199,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{_datadir}/ansible/networking-ovn-migration/playbooks/
 
 %changelog
+* Fri Oct 11 2019 RDO <dev@lists.rdoproject.org> 7.0.0-0.2.0rc1
+- Update to 7.0.0.0rc2
+
 * Fri Oct 04 2019 RDO <dev@lists.rdoproject.org> 7.0.0-0.1.0rc1
 - Update to 7.0.0.0rc1
 
