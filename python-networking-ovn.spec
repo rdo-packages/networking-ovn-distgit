@@ -18,7 +18,7 @@
 %global with_doc 1
 
 Name:           python-%{pkgname}
-Version:        7.0.0
+Version:        7.1.0
 Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
@@ -197,6 +197,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 %{_datadir}/ansible/networking-ovn-migration/playbooks/
 
 %changelog
+* Tue Feb 18 2020 RDO <dev@lists.rdoproject.org> 7.1.0-1
+- Update to 7.1.0
+
 * Wed Oct 16 2019 RDO <dev@lists.rdoproject.org> 7.0.0-1
 - Update to 7.0.0
 
