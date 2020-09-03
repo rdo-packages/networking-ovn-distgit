@@ -1,0 +1,2 @@
+Networking-OVN project has been merged with Neutron since Ussuri. You can find the distgit for
+OVN driver related packages in https://review.rdoproject.org/r/#/admin/projects/openstack/networking-ovn-distgit
