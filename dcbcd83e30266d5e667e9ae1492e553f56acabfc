@@ -22,6 +22,30 @@
       "revId": "dcbcd83e30266d5e667e9ae1492e553f56acabfc",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a586864d_599b3ac6",
+        "filename": "README",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2020-09-03T10:31:53Z",
+      "side": 1,
+      "message": "it works for git clone:\n\n$ git clone https://review.rdoproject.org/r/openstack/networking-ovn-distgit\n\nbut yes, i\u0027ll update it",
+      "parentUuid": "bab1d0e9_e0f3bf65",
+      "range": {
+        "startLine": 2,
+        "startChar": 31,
+        "endLine": 2,
+        "endChar": 95
+      },
+      "revId": "dcbcd83e30266d5e667e9ae1492e553f56acabfc",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
