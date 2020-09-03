@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43a2481a_6caaaad2",
+        "filename": "README",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-09-03T11:56:04Z",
+      "side": 1,
+      "message": "you mean for older branches can be found at https://review.rdoproject.org/r/#/admin/projects/openstack/networking-ovn-distgit? as with this patch rpm-master content will go away and for Ussuri+ in neutron-distgit?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 112
+      },
+      "revId": "d089e7bd4406dc8fbbb2b4abc71ba93b3e921197",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
