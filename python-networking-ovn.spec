@@ -38,7 +38,7 @@ Open vSwitch project.
 Summary:        %{drv_vendor} OpenStack Neutron driver
 %{?python_provide:%python_provide python%{pyver}-%{pkgname}}
 
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-debtcollector
 BuildRequires:  python%{pyver}-mock
