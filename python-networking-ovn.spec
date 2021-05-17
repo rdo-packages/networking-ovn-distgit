@@ -46,11 +46,18 @@ BuildRequires:  openstack-macros
 
 # This is required to generate the networking-ovn.ini configuration file
 BuildRequires:  python%{pyver}-neutron
-
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-oslo-log
 BuildRequires:  python%{pyver}-ovsdbapp
 BuildRequires:  python%{pyver}-pbr
+
+# Required to run unit and pep8 tests
+BuildRequires: python%{pyver}-flake8
+BuildRequires: python%{pyver}-os-testr
+BuildRequires: python%{pyver}-neutron-tests
+BuildRequires: python%{pyver}-neutron-lib-tests
+BuildRequires: python%{pyver}-octavia-lib
+BuildRequires: python%{pyver}-tooz
 
 %if 0%{?with_doc}
 BuildRequires:  python%{pyver}-openstackdocstheme
@@ -160,6 +167,11 @@ mkdir -p %{buildroot}/%{_sysconfdir}/neutron/conf.d/networking-ovn-metadata-agen
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-agent.service
+
+%check
+export LANG=en_US.UTF-8
+flake8
+ostestr --concurrency=0
 
 %post -n python%{pyver}-%{pkgname}-metadata-agent
 %systemd_post networking-ovn-metadata-agent.service
