@@ -34,6 +34,24 @@
       "revId": "18f2e882a5886411020b49638cdbeb45de1b62f1",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2e87809_10b5cb81",
+        "filename": "python-networking-ovn.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 172
+      },
+      "writtenOn": "2021-05-17T15:18:13Z",
+      "side": 1,
+      "message": "I think that should help, yes. flake8 was the one discovering the duplicated method names.",
+      "parentUuid": "c3e6573a_8bb54c85",
+      "revId": "18f2e882a5886411020b49638cdbeb45de1b62f1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
     }
   ]
 }
