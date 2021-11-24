@@ -51,8 +51,7 @@ BuildRequires:  python%{pyver}-oslo-log
 BuildRequires:  python%{pyver}-ovsdbapp
 BuildRequires:  python%{pyver}-pbr
 
-# Required to run unit and pep8 tests
-BuildRequires: python%{pyver}-flake8
+# Required to run unit tests
 BuildRequires: python%{pyver}-os-testr
 BuildRequires: python%{pyver}-neutron-tests
 BuildRequires: python%{pyver}-neutron-lib-tests
@@ -170,7 +169,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/networking-ovn-metadata-
 
 %check
 export LANG=en_US.UTF-8
-flake8
 ostestr --concurrency=0
 
 %post -n python%{pyver}-%{pkgname}-metadata-agent
