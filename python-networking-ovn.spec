@@ -228,3 +228,4 @@ ostestr --concurrency=0
 * Fri Oct 04 2019 RDO <dev@lists.rdoproject.org> 7.0.0-0.1.0rc1
 - Update to 7.0.0.0rc1
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/networking-ovn/commit/9be626d3b034d1afd23ad3c9fb2fba8dd6aa2941
